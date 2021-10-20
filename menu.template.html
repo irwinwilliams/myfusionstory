@@ -1,0 +1,76 @@
+ <script type="text/javascript">
+  function testButtonAction1()
+  {
+    console.log("one");
+  }
+  
+
+</script>
+<a-gui-flex-container
+                      id="menu"
+  flex-direction="column"
+  justify-content="center"
+  align-items="normal"
+  component-padding="0.1"
+  opacity="0.7"
+  width="3.5"
+  height="{{menuHeight}}"
+  panel-color="#072B73"
+  panel-rounded="0.2"
+  position="-4 2.5 -6"
+  rotation=""
+  rounded="height: {{menuHeight}}}; width: 3.5; opacity: 0.7; color: #072B73; radius: 0.2; depthWrite: false; polygonOffset: true; polygonOffsetFactor: 1"
+  gui-flex-container=""
+>
+  
+<a-entity bind-for="for: item; in: fusionActivities; key: name; updateInPlace: true">
+  <template>
+    <a-gui-button
+    id="btn1"
+    width="2.5"
+    height="0.7"
+    base-depth="0.05"
+    depth="0.2"
+    gap="0.1"
+    radius="0"
+    onclick="testButtonAction1"
+    value="{{item.displayName}}"
+    font-size="0.3"
+    margin="0 0 0.05 0"
+    toggle="true"
+    font-color="#F2BB16"
+    active-color="#5687A6"
+    hover-color="#2a5b7a"
+    border-color="#F2BB16"
+    focus-color="#ff0000"
+    background-color="#011C40"
+    gui-button="toggleState: true"
+    geometry="primitive: plane; height: 0.7; width: 2.5"
+    material="shader: flat; transparent: true; opacity: 0.5; side: double; color: #011C40"
+    role="button"
+    tabindex="0"
+    aria-label="{{item.displayName}}"
+    position="0 {{item.index}} 0.01"
+  >
+    <a-entity
+      geometry="width: 2.5; height: 0.7; depth: 0.05"
+      position="0 0 0.025"
+      rotation=""
+      material="shader: flat; side: double; color: #F2BB16"
+    ></a-entity
+    ><a-entity
+      geometry="width: 2.4; height: 0.6; depth: 0.2"
+      position="0 0 0.1"
+      material="shader: flat; side: double; color: #5687A6"
+      rotation=""
+      ><a-entity
+        troika-text="value: {{item.displayName}}; align: center; color: #F2BB16; font: assets/fonts/PressStart2P-Regular.ttf; fontSize: 0.3; depthOffset: 1; maxWidth: 2.380952380952381"
+        troika-text-material="shader: flat;"
+        position="0 0 0.15000000000000002"
+        ><a-entity material="shader: flat"></a-entity></a-entity></a-entity
+  ></a-gui-button>
+  </template>
+</a-entity>
+
+  
+</a-gui-flex-container>

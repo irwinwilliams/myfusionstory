@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
+
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+
+    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
+    <!--https://ar-js-org.github.io/AR.js-Docs/ -->
+    <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script> -->
+    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"> -->
+  
+    
+    <script type="text/javascript" src="activities.js"></script>
+    <script type="text/javascript" src="state.js"></script>
+  </head>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <form id="loginForm" action="/signin" method="post">
+      <input type="hidden" name="Provider" value="Strava" />
+      <input type="hidden" name="ReturnUrl" />
+    </form>
+
+    <!-- <a-scene embedded arjs='sourceType: webcam;'> 
+    <a-scene
+      embedded
+      cursor="rayOrigin: mouse; "
+      raycaster="objects: .clickable"
+      arjs="sourceType:  image; sourceUrl:img/IMG_6414.jpg"
+    >-->
+    <a-scene 
+             cursor="rayOrigin: mouse;"
+             raycaster="objects: .clickable"
+             >
+      <a-assets>
+        <img id="fusion-banner" src="img/IMG_6414.jpg" />
+        <img id="fusion-1" src="img/fusion1.png" />
+        <img id="fusion-2" src="img/fusion2.png" />
+        <img id="fusion-3" src="img/fusion3.png" />
+        <img id="fusion-4" src="img/fusion4.png" />
+        <img id="fusion-5" src="img/fusion5.png" />
+        <img id="fusion-6" src="img/fusion6.png" />
+        <img id="sky" src="https://cdn.glitch.me/4f2f309b-b164-4484-b25a-5e003c7655ee%2F51565083506_d38c974520_o.jpg?v=1634182593459">
+
+      </a-assets>
+      
+      <!-- https://www.flickr.com/photos/nb-fotos/51565083506/in/pool-equirectangular/ -->
+      <a-sky src="#sky"></a-sky>
+
+      
+     
+
+      <a-entity template="src: menu.template.html"></a-entity>
+
+      <a-entity template="src: activity-details.template.html"></a-entity>
+     
+    <a-light></a-light>
+
+      
+      <a-entity
+        id="signin-button"
+        class="clickable"
+        cursor="fuse: true;"
+        laser-controls
+        raycaster="lineColor: red; lineOpacity: 0.5"
+        geometry="primitive: box"
+        material="color: red"
+        position="2 4 -7"
+      ></a-entity>
+      <a-entity
+        id="trophy-container"
+        width="1"
+        height="1"
+        scale="0.5 0.5 0.5"
+        position="0 0 -9"
+      >
+        <a-entity id="rotator" 
+                  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+                  position="0 4 -8">
+          <a-entity
+            id="cube"
+            position="0 0 0"
+            rotation="30 30 30"
+            width="4"
+            height="4"
+            depth="4"
+            scale=""
+          >
+            <a-box
+              id="back"
+              position=""
+              rotation=""
+              width="4"
+              height="4"
+              depth="0"
+              color="#7BC8A4"
+              material="src: #fusion-1"
+              geometry=""
+            ></a-box>
+            <a-box
+              id="left"
+              position="-2 0 2"
+              rotation="0 90 0"
+              color="#1AA3D9"
+              height="4"
+              width="4"
+              depth="0"
+              material="src: #fusion-2"
+            ></a-box>
+            <a-box
+              id="rght"
+              position="2 0 2"
+              rotation="0 90 0"
+              width="4"
+              height="4"
+              color="#7BC8A4"
+              depth="0"
+              material="src: #fusion-3"
+              geometry=""
+            ></a-box>
+            <a-box
+              id="topp"
+              position="0 2 2"
+              rotation="90 0 0"
+              width="4"
+              height="4"
+              color="#7BC8A4"
+              depth="0"
+              material="src: #fusion-4"
+              geometry=""
+            ></a-box>
+            <a-box
+              id="bott"
+              position="0 -2 2"
+              rotation="90 0 0"
+              width="4"
+              height="4"
+              color="#7BC8A4"
+              depth="0"
+              material="src: #fusion-5"
+              geometry=""
+            ></a-box>
+            <a-box
+              id="frnt"
+              position="0 0 4"
+              rotation=""
+              width="4"
+              height="4"
+              color="#7BC8A4"
+              material="src: #fusion-6"
+              depth="0"
+              geometry=""
+            ></a-box>
+          </a-entity>
+        </a-entity>
+
+        <a-box
+          position="0.5 -3.5 -6"
+          rotation=""
+          color="#1CC3D9"
+          height="4"
+          width="4"
+          depth="4"
+          material="src: #fusion-banner"
+          geometry=""
+        >
+        </a-box>
+      </a-entity>
+    
+    
+      <a-entity position="0 .6 4">
+        <a-camera look-controls>
+          <a-entity
+            id="mycursor"
+            cursor="fuse: true; fuseTimeout: 500; max-distance: 30;"
+            position="0 0 -5"
+            geometry="primitive: sphere;"
+            material="color: blue; shader: flat"
+            scale="0.070 0.070 0.070"
+          >
+          </a-entity>
+        </a-camera>
+        <a-entity laser-controls="hand: right"></a-entity>
+
+      </a-entity>
+      
+    </a-scene>
+    
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>
