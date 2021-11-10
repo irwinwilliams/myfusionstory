@@ -7,6 +7,9 @@
     <script src="https://unpkg.com/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
 
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://unpkg.com/aframe-geojson-component/dist/aframe-geojson-component.min.js"></script>
+
 
     <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
     <!--https://ar-js-org.github.io/AR.js-Docs/ -->
@@ -44,14 +47,19 @@
         <img id="fusion-5" src="img/fusion5.png" />
         <img id="fusion-6" src="img/fusion6.png" />
         <img id="sky" src="https://cdn.glitch.me/4f2f309b-b164-4484-b25a-5e003c7655ee%2F51565083506_d38c974520_o.jpg?v=1634182593459">
+        <a-asset-item id="json-places" src="sample-place.geojson" />
 
       </a-assets>
       
       <!-- https://www.flickr.com/photos/nb-fotos/51565083506/in/pool-equirectangular/ -->
       <a-sky src="#sky"></a-sky>
 
-      
-     
+   <a-entity position="0 0 0.001"
+            geometry="primitive: plane; width: 8; height: 4;"
+            material="shader: flat; color: #000; transparent: true;"
+            geojson="src: #json-places;"
+            >
+          </a-entity>
 
       <a-entity template="src: menu.template.html"></a-entity>
 
