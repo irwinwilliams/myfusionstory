@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple WebGL Overlay</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
+    <!--<script src="https://unpkg.com/@googlemaps/three/dist/index.min.js"></script>-->
+    <script src="google-three-helper.js"></script>
+    <!--
+      <script src="three.js"></script>
+      <script src="googlemaps.three.min.js"></script>
+    -->
+    
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+      #map {
+        height: 400px;
+        width:400px;
+        
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        pointer-events: none;
+      }
+      div.container {
+        display: flex;
+        justify-content: center; /* For horizontal alignment */
+        align-items: center;     /* For vertical alignment   */
+      }
+
+    </style>
+    
+  </head>
+  <body>
+    
+    <div class="container">
+  
+      <div id="map" class="map"></div>
+
+    </div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSlQcsEjU_sR6kajerqEA-a_4gSFKFIB8&callback=initMap&v=beta"
+      async
+    ></script>
+    <!--<script src="./map.js"></script>-->
+    
+  </body>
+</html>
