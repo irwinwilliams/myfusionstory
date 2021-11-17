@@ -7,3 +7,11 @@ var descriptions=[
 },{stage: "Breezy", story:"'Irwin Williams finished in 48:16, at pace 17:12 per mile, the top 10% of runners overall. Overtaking 56 runners compared to the last race, and passed by 2.'"
 },{stage: "Alpha", story:"'Irwin Williams finished in 1:03:17, at pace 10:11 per mile, the top 25% of runners overall. '"}
 ];
+
+function findDescription(name)
+{
+    for (var i=0;i<descriptions.length;i++)
+    {
+        if (descriptions[i].stage.toLowerCase().indexOf(name) > -1) return descriptions[i].story;
+    }
+}

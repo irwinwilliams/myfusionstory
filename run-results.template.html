@@ -1,12 +1,25 @@
 <a-entity position="41 0 -6">
     <a-entity bind-for="for: item; in: fusionActivities; key: name; updateInPlace: true">
         <template>
-            <a-image id="fusion-plane-{{displayindex}}" geometry="primitive: plane; width: 11; height: 11"
+            <!-- <a-text 
+                position="{{displayindex}} 8 2"
+                baseline="top"
+                anchor="center"
+                height="100"
+                width="25"
+                color="white"
+                value="{{displayName}}"
+            ></a-text> -->
+            <!--
+
+            -->
+            <a-image id="fusion-plane-{{displayindex}}" 
+                geometry="primitive: plane; width: 11; height: 11"
                 src="{{google_image_location}}"
-                material="transparent: true; opacity: 0.95" 
+                material="transparent: true; opacity: 1" 
                 position="{{displayindex}} 0 0"
                 rotation="0 0 0"
-                text="position:0 8 0;align:center; lineHeight: 50; baseline: bottom; font: kelsonsans; color: white; value:{{displayName}}"
+                text="align:center; opacity:1; lineHeight: 50; width:15; wrap-count:15;baseline: bottom; font: kelsonsans; color: white; value:{{displayName2}}"
                 look-at="#cameraRig">
             </a-image>
 

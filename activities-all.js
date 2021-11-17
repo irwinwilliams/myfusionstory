@@ -162,6 +162,60 @@ var activities = [
       "id":4769714224
    },
    {
+      "externalId":"7A39AD35-CF7A-4A19-B6D6-E1340FB7A9F2-activity.fit",
+      "uploadId":5051357188,
+      "athlete":{
+         "id":39662027
+      },
+      "name":"Channa-Channa-Chanolo! #Fusion ",
+      "distance":13191.5,
+      "movingTime":7011,
+      "elapsedTime":8331,
+      "totalElevationGain":796.7,
+      "elevHigh":618.5,
+      "elevLow":45.4,
+      "type":19,
+      "startDate":"2021-02-04T09:05:30Z",
+      "startDateLocal":"2021-02-04T05:05:30Z",
+      "timezone":"(GMT-04:00) America/Port_of_Spain",
+      "startLatlng":[
+         10.69,
+         -61.51
+      ],
+      "endLatlng":[
+         10.69,
+         -61.51
+      ],
+      "achievementCount":4,
+      "kudosCount":23,
+      "commentCount":3,
+      "athleteCount":1,
+      "photoCount":0,
+      "totalPhotoCount":3,
+      "map":{
+         "id":"a4732170502",
+         "polyline":null,
+         "summaryPolyline":"obf`A~rlvJ_AtBkAtAFHAG~Ak@A\\OXBRBGhBMM`Cg@`BJFt@B^ElGgDdCkBDQz@a@Nk@x@cA|@qCPSjBO`DFtDhAR?vAiCv@wBLSPCn@b@~CrEp@Z@Qa@uAAm@^eBp@oAB_@EI_BBWMo@kAICM[i@o@OCm@wAu@[gAO{BaAa@_AM}AQq@kBcD_@yAcAwCg@cCS]s@c@g@y@Ew@LgA@eAa@_AYgDBMY{ABq@EKFQa@yABg@Gs@q@_CLkBEcCe@oC}@oDyAaEgAaB_Aq@g@m@WK}AgB_BwAcA}Ay@s@o@gAqBkAe@c@g@Uu@q@gEoCcA[_@Y_A_@kAcBsA_C{@_A]cAgCsCs@kCgAwACk@M{@QWQmAWSa@IAYn@o@EOD]`@}@K_BBi@_AsCU{ASUW@SK[B\\yBc@mAiAu@Cq@Se@cAe@FLQT@Jm@AIRuBACGg@LmC[e@Dy@MeAIk@v@Oj@WZOb@MHk@lB[R@H{AfCm@VwAT_@BGIFBEA?HYHq@bBy@l@Gr@w@zAE~@FxAQjAPjBYdCB|AKNKv@BhA_@nB]pAAjAJdCElBL`@El@FRn@l@vAh@XX?XiBh@m@j@]jDAp@Or@MVqAt@gA\\c@MoBSuCLmA^[^mB~CUp@Hx@`@nA?|@SnAu@|A[z@_AZUj@q@^u@~@EZPlAr@nARd@\\THXX^rAhAPr@T\\b@B\\b@\\|@@r@I@jATVAn@N~@x@\\z@?p@Px@CRFJCFBEM@LE@Hb@@jBKTHj@U\\@ZVHXBNQH?Ef@Vh@?AFJJKFFAGRF?EBHMd@In@XPf@d@JLP|@GLJT?CPASL_@l@]JS~@Bj@w@`@Ob@ATu@xAEdAXLOd@]f@IVWhA?VZ^t@j@CZRXb@RxAv@dARn@RzAOd@PF^d@f@Jf@VDL`@O~@ERQp@Ml@TLC?HZPNBTWZFLKd@Rb@@`@ZFZA\\Ut@w@vAQMFIbAP`Ab@ZZJZ@ZQXyA`A[`@PRTn@PJ`@rAFvCJp@CZV]XK`@Ff@YfA@HFTvAd@PVTTCxDb@X`@n@fBBRId@wAz@Sd@SDa@j@CX[EDQb@O`@D|@zAjA^\\RVdALJDEhAi@dA{@x@[nBe@nBG~@L"
+      },
+      "trainer":false,
+      "commute":false,
+      "manual":false,
+      "private":false,
+      "flagged":false,
+      "workoutType":0,
+      "uploadIdStr":"5051357188",
+      "averageSpeed":1.882,
+      "maxSpeed":7,
+      "hasKudoed":false,
+      "gearId":"g6625739",
+      "kilojoules":null,
+      "averageWatts":null,
+      "deviceWatts":null,
+      "maxWatts":null,
+      "weightedAverageWatts":null,
+      "id":4732170502
+   },
+   {
       "externalId":"8A898E50-DFDB-4133-9E86-A8C1C7299CCA-activity.fit",
       "uploadId":4904989108,
       "athlete":{
@@ -270,6 +324,60 @@ var activities = [
       "id":4538220069
    },
    {
+      "externalId":"BC8D4503-05D3-4AAB-90E8-1B4D2C94EF37-activity.fit",
+      "uploadId":4767853458,
+      "athlete":{
+         "id":39662027
+      },
+      "name":"#Fusion #MissionBreezy #FollowTheWhiteFlag #ButDontSurrender",
+      "distance":4385.4,
+      "movingTime":2408,
+      "elapsedTime":3659,
+      "totalElevationGain":497.1,
+      "elevHigh":539.9,
+      "elevLow":193.2,
+      "type":19,
+      "startDate":"2020-12-12T10:48:09Z",
+      "startDateLocal":"2020-12-12T06:48:09Z",
+      "timezone":"(GMT-04:00) America/Port_of_Spain",
+      "startLatlng":[
+         10.69,
+         -61.51
+      ],
+      "endLatlng":[
+         10.69,
+         -61.51
+      ],
+      "achievementCount":0,
+      "kudosCount":7,
+      "commentCount":0,
+      "athleteCount":1,
+      "photoCount":0,
+      "totalPhotoCount":0,
+      "map":{
+         "id":"a4461737545",
+         "polyline":null,
+         "summaryPolyline":"edf`AlslvJACMAQ@YJM?OCMDm@BIAa@Nm@f@EJMJS\\IBOASFs@j@SJMJGLCBeA]MMQ[k@SgAw@USk@SOAUISAYM?CHI?SN_@b@a@^IFIXQNUb@c@@MEQBMEECe@FSCA@AE?a@P?@U?KDE?EDGA?BGCCFGAADA?CBECGBKC?DG@MEM?_AFUVUFGJODSIG?KH@?EHG@@BG@QAED]@WHM?IBCA?DQEGBIIIA?ECC@EVo@@K@AAMBEFICMAIDCBG?KBKF?CMHKAKDGDQJGNUHA?GNERSLC`@]LABC?ESMWCW?EBAJE@i@EOPMA?HUT?BKUKGIACCM_@AQGI?GDEAQJWBm@I_@O[GCSY?UU_@AKQOEO@SOCLC`AeAD@VMTEPYBMFCACq@?G@EDYAI@a@GM@KCi@?WEGDUBEDG?ABCEOGC@BBE?ABEAG?GGM@EEEDEAABGGGLEQAFE@EMKCG@ECQCEBE@MCCBECCBIECDCCE@MCI@EAC@ECEBIOECS@EAGDCRGCSBGHYLGASH?ABAODB?IDGAODU^s@TADUDYAKBAA?@KBKCINM@KFC?A@ACWPOFYDYLG?QDGACBMBSLWD@HDDBJAADF\\X?F@FCDDLFF@ND?HHLXF@BHRHJ@BFD@DJNDNLB?Lh@LRD?@DACH@DDPDp@n@^l@PRd@z@n@l@DLPRZn@@PJJHVDDD?TXHBJJFL?JNVVLNPJCDFLBFNZRLL\\p@TRDHBTFJXLBHDAJPFBFE\\JZZLVB?HJNJD?JJPDJLh@Rd@Xb@L`@Rr@n@v@fALH`@JDDx@LZPj@b@d@PRTB@DGDBBAJi@?GCMFGHCN@J@BBFOHELHJBHOCYDENEJ?AAT?CGDCGSBUXM`@i@TKZa@BKVURk@NOPGBGJCH@HGb@[HM`@WNSLEBCTEJORAh@WFSLERCP@PFCOLM@KBCJ?HFL@"
+      },
+      "trainer":false,
+      "commute":false,
+      "manual":false,
+      "private":false,
+      "flagged":false,
+      "workoutType":0,
+      "uploadIdStr":"4767853458",
+      "averageSpeed":1.821,
+      "maxSpeed":5.6,
+      "hasKudoed":false,
+      "gearId":"g6625739",
+      "kilojoules":null,
+      "averageWatts":null,
+      "deviceWatts":null,
+      "maxWatts":null,
+      "weightedAverageWatts":null,
+      "id":4461737545
+   },
+   {
       "externalId":"97FABA9A-4074-451B-9BE7-CCDAAF38A7A7-activity.fit",
       "uploadId":4703815549,
       "athlete":{
@@ -344,39 +452,28 @@ for (var i=0;i<activities.length;i++)
 
     activities[i].ogName = activities[i].name;
     activities[i].displayName = activities[i].name.replace("#Fusion", "").trim();
-    activities[i].displayName2 = activities[i].name.replace("#Fusion", "").trim();
-
     if (activities[i].displayName.toLowerCase().indexOf("archion") > -1)
       {
         activities[i].displayName = "Archion (6)";
-        activities[i].fusionSummary = findDescription("archion");
       }
     else if (activities[i].displayName.toLowerCase().indexOf("paragrant") > -1)
       {
         activities[i].displayName = "Paragrant (3)";
-        activities[i].fusionSummary = findDescription("paragrant");
-
       }
         else if (activities[i].displayName.toLowerCase().indexOf("breezy") > -1)
       {
         activities[i].displayName = "Breezy (2)";
-        activities[i].fusionSummary = findDescription("breezy");
-
       }
         else if (activities[i].displayName.toLowerCase().indexOf("alpha") > -1)
       {
         activities[i].displayName = "Alpha (1)";
-        activities[i].fusionSummary = findDescription("alpha");
-
       }
         else if (activities[i].displayName.toLowerCase().indexOf("chanolo") > -1)
       {
-        activities[i].fusionSummary = findDescription("chanolo");
         activities[i].displayName = "Chanolo (4)";
       }
         else if (activities[i].displayName.toLowerCase().indexOf("covigne") > -1)
       {
-        activities[i].fusionSummary = findDescription("covigne");
         activities[i].displayName = "Covigne (5)";
       }
 

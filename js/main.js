@@ -13,15 +13,37 @@
 
 function showMarkers(e)
 {
-    console.log(e);
+    //console.log(e);
     var target = e.target;
     var aria = target.getAttribute("aria-label")
     var xPos = 41+activityDisplay[aria];
     var cameraPosition = cameraRig.attributes["position"].value;
     var pos = cameraPosition.split(" ");
     cameraRig.setAttribute("position", `${xPos} ${pos[1]} ${pos[2]}`);
+
+    var menuPosition = menu.attributes["position"].value;
+    var menuPos = menuPosition.split(" ");
+    menu.setAttribute("position", `${xPos-8} ${menuPos[1]} ${menuPos[2]}`);
+    if (aria !== null)
+    {
+      var loweredAria = aria.toLowerCase();
+      var summary = findDescription(loweredAria.substring(0, loweredAria.indexOf(" ")));
+      read(summary);
+    }
     
 }
+var lastRead = null;
+//use speech synthesis to read the summary
+function read(summary)
+{
+  if (lastRead === null)
+  {
+    var speech = new SpeechSynthesisUtterance(summary);
+    window.speechSynthesis.speak(speech);
+    lastRead = summary;
+  }
+  lastRead = null;
+} 
 
 AFRAME.registerComponent("faders", {
     schema: {
