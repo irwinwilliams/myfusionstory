@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "**[Subscribe to the A-Frame newsletter!](https://aframe.io/subscribe/)**",
+  "main": "activities.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irwinwilliams/myfusionstory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irwinwilliams/myfusionstory/issues"
+  },
+  "homepage": "https://github.com/irwinwilliams/myfusionstory#readme"
+}

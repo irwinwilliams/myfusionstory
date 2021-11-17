@@ -1,232 +1,30 @@
+<a-assets>
+  <img id="fusion-banner" src="img/IMG_6414.jpg" />
+  <img id="fusion-1" src="img/fusion1.png" />
+  <img id="fusion-2" src="img/fusion2.png" />
+  <img id="fusion-3" src="img/fusion3.png" />
+  <img id="fusion-4" src="img/fusion4.png" />
+  <img id="fusion-5" src="img/fusion5.png" />
+  <img id="fusion-6" src="img/fusion6.png" />
+</a-assets>
+
 <a-entity
   id="m1"
   geometry="width: 2.4; height: 3; depth: 2.4"
   material="color: #323232; transparent: true; opacity: 0.3"
   rotation="0 -28 0"
   position="4 2.4 -2.8"
-  animation="property: rotation; from: 0 -28 0; to: 0 -118 0; dur: 7500; loop: true;"
 >
+<!-- animation="property: rotation; from: 0 -28 0; to: 0 -118 0; dur: 7500; loop: true;"-->
   <!-- Question 1 -->
   <a-entity
     id="m1-q1"
     geometry="width: 2; height: 3; depth: 0.1"
-    material="color: #0D7377; transparent: true; opacity: 0.8"
+    material="src: #fusion-1"
     rotation=""
     position="0 0 1.2"
   >
-    <!-- text background -->
-    <a-entity
-      geometry="primitive: plane; height: 0.8; width: 1.8"
-      material="color: white"
-      position="0 1 0.1"
-    >
-    </a-entity>
-    <!-- text copy -->
-    <a-entity
-      geometry="primitive: plane; width: 1.8"
-      material="transparent: true; opacity: 0; alphaTest: 1"
-      scale="1.1 1.1 1.1"
-      text="value: This structure is GFP. What is the most common secondary structure present here?; wrapCount: 25; align: center; width: 1.6; color: black; lineHeight: 60; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/opensanscondensed/OpenSansCondensed-Bold.json"
-      position="0 0.875 0.1"
-    >
-    </a-entity>
-    <!-- q1 ui -->
-    <a-gui-flex-container
-      flex-direction="column"
-      justify-content="center"
-      align-items="normal"
-      component-padding="0.1"
-      opacity="1"
-      width="1.8"
-      height="2"
-      position="0 -0.4 0.1"
-      rotation=""
-      panel-color="#000000"
-      rounded="height: 2; width: 1.8; color: #000000; radius: 0.05; depthWrite: false; polygonOffset: true; polygonOffsetFactor: 1"
-      gui-flex-container=""
-    >
-      <a-gui-radio
-        id="m1-q1-a1"
-        width="1.8"
-        height="0.5"
-        onclick="genericListener"
-        active-color="#14ffec"
-        value="Alpha helices"
-        ative="false"
-        checked="false"
-        font-size="0.12"
-        margin="0 0 0 0"
-        active="false"
-        gui-radio=""
-        gui-item=""
-        material="shader: flat; color: #d3d3d4"
-        geometry="primitive: plane; height: 0.5; width: 1.8"
-        role="radio"
-        position="0 0.75 0.01"
-      >
-        <a-cylinder
-          radius="0.1"
-          height="0.01"
-          rotation="90 0 0"
-          material="color: #22252a; shader: flat"
-          position="-0.65 0 0"
-          geometry=""
-          ><a-torus
-            radius="0.095"
-            radius-tubular="0.01"
-            rotation="90 0 0"
-            material="color: #fff; shader: flat"
-            geometry=""
-            animation__leave="property: material.color; from: #606876; to: #fff; dur: 200; easing: easeOutQuad"
-          ></a-torus
-          ><a-cylinder
-            radius="0.09"
-            height="0.02"
-            rotation=""
-            material="color: #22252a; shader: flat"
-            geometry=""
-          ></a-cylinder></a-cylinder
-        ><a-entity
-          troika-text="value: Alpha helices; anchor: left; color: #2c3037; fontSize: 0.12; depthOffset: 1; maxWidth: 1.7142857142857142"
-          position="-0.4 0 0.05"
-          ><a-entity></a-entity></a-entity
-      ></a-gui-radio>
-      <a-gui-radio
-        id="m1-q1-a2"
-        width="1.8"
-        height="0.5"
-        onclick="genericListener"
-        active-color="#14ffec"
-        value="Beta sheets"
-        ative="false"
-        checked="false"
-        font-size="0.12"
-        margin="0 0 0 0"
-        active="false"
-        gui-radio="checked: true"
-        gui-item=""
-        material="shader: flat; color: #d3d3d4"
-        geometry="primitive: plane; height: 0.5; width: 1.8"
-        role="radio"
-        position="0 0.25 0.01"
-      >
-        <a-cylinder
-          radius="0.1"
-          height="0.01"
-          rotation="90 0 0"
-          material="color: #22252a; shader: flat"
-          position="-0.65 0 0"
-          geometry=""
-          ><a-torus
-            radius="0.095"
-            radius-tubular="0.01"
-            rotation="90 0 0"
-            material="color: #fff; shader: flat"
-            geometry=""
-            animation__leave="property: material.color; from: #606876; to: #fff; dur: 200; easing: easeOutQuad"
-          ></a-torus
-          ><a-cylinder
-            radius="0.09"
-            height="0.02"
-            rotation=""
-            material="color: #22252a; shader: flat"
-            geometry=""
-            animation__colorin="property: material.color; from: #22252a; to: #14ffec; dur: 500; easing: easeInOutCubic"
-            animation__rotationin="property: rotation; from: 0 0 0; to: -180 0 0; dur: 500; easing: easeInOutCubic"
-            animation__position1in="property: position; from: 0 0 0; to: 0 0.3 0; dur: 200; easing: easeInOutCubic"
-            animation__position2in="property: position; from: 0 0.3 0; to: 0 0 0; dur: 200; easing: easeInOutCubic; delay: 300"
-          ></a-cylinder></a-cylinder
-        ><a-entity
-          troika-text="value: Beta sheets; anchor: left; color: #2c3037; fontSize: 0.12; depthOffset: 1; maxWidth: 1.7142857142857142"
-          position="-0.4 0 0.05"
-          ><a-entity></a-entity></a-entity
-      ></a-gui-radio>
-      <a-gui-radio
-        id="m1-q1-a3"
-        width="1.8"
-        height="0.5"
-        onclick="genericListener"
-        active-color="#14ffec"
-        value="Triple helices"
-        ative="false"
-        checked="false"
-        font-size="0.12"
-        margin="0 0 0 0"
-        active="false"
-        gui-radio=""
-        gui-item=""
-        material="shader: flat; color: #d3d3d4"
-        geometry="primitive: plane; height: 0.5; width: 1.8"
-        role="radio"
-        position="0 -0.25 0.01"
-      >
-        <a-cylinder
-          radius="0.1"
-          height="0.01"
-          rotation="90 0 0"
-          material="color: #22252a; shader: flat"
-          position="-0.65 0 0"
-          geometry=""
-          ><a-torus
-            radius="0.095"
-            radius-tubular="0.01"
-            rotation="90 0 0"
-            material="color: #fff; shader: flat"
-            geometry=""
-            animation__leave="property: material.color; from: #606876; to: #fff; dur: 200; easing: easeOutQuad"
-          ></a-torus
-          ><a-cylinder
-            radius="0.09"
-            height="0.02"
-            rotation=""
-            material="color: #22252a; shader: flat"
-            geometry=""
-          ></a-cylinder></a-cylinder
-        ><a-entity
-          troika-text="value: Triple helices; anchor: left; color: #2c3037; fontSize: 0.12; depthOffset: 1; maxWidth: 1.7142857142857142"
-          position="-0.4 0 0.05"
-          ><a-entity></a-entity></a-entity
-      ></a-gui-radio>
-      <a-gui-button
-        id="m1-q1-next"
-        width="1.8"
-        height="0.5"
-        onclick="nextListener"
-        key-code="32"
-        value="Next"
-        font-size="0.175"
-        margin="0 0 0 0"
-        scale=""
-        active-color="#0d7377"
-        gui-interactable=""
-        gui-item=""
-        geometry="primitive: plane; height: 0.5; width: 1.8"
-        material="shader: flat; transparent: true; opacity: 0.5; side: double; color: #22252a"
-        role="button"
-        tabindex="0"
-        aria-label="Next"
-        gui-button=""
-        position="0 -0.75 0.01"
-      >
-        <a-entity
-          geometry="width: 1.8; height: 0.5; depth: 0.01"
-          position="0 0 0.005"
-          rotation=""
-          material="shader: flat; side: double; color: #d3d3d4"
-        ></a-entity
-        ><a-entity
-          geometry="width: 1.7750000000000001; height: 0.475; depth: 0.02"
-          position="0 0 0.01"
-          material="shader: flat; side: double; color: #22252a"
-          rotation=""
-          animation__leave="property: material.color; from: #2c3037; to: #22252a; dur: 200; easing: easeOutQuad"
-          ><a-entity
-            troika-text="value: Next; align: center; color: #d3d3d4; fontSize: 0.175; depthOffset: 1; maxWidth: 1.7142857142857142"
-            troika-text-material="shader: flat;"
-            position="0 0 0.060000000000000005"
-            ><a-entity material="shader: flat"></a-entity></a-entity></a-entity
-      ></a-gui-button>
-    </a-gui-flex-container>
+    
   </a-entity>
   <!-- Question 1 end -->
 

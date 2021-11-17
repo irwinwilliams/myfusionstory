@@ -1,203 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
 
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <script src="https://d3js.org/d3.v5.js"></script>
-    <script src="https://unpkg.com/aframe-geojson-component/dist/aframe-geojson-component.min.js"></script>
+<head>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-state-component@7.1.0/dist/aframe-state-component.min.js"></script>
+  <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+  <script src="https://unpkg.com/aframe-cursor-teleport-component@1.0.0/dist/aframe-cursor-teleport-component.min.js"></script>
 
+  <script src="js/polyline.js"></script>
+  <script type="text/javascript" src="activities.js"></script>
+  <script type="text/javascript" src="state.js"></script>
+  <script src="js/main.js"></script>
+</head>
 
-    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
-    <!--https://ar-js-org.github.io/AR.js-Docs/ -->
-    <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script> -->
-    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"> -->
-  
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene cursor="rayOrigin: mouse;" raycaster="objects: .clickable">
+    <a-assets>
+      <img id="fusion-banner" src="img/IMG_6414.jpg" />
+      <img id="fusion-banner2" src="img/you-did-it.jpg" />
+      <!--https://maps.googleapis.com/maps/api/staticmap?center=10.71847,-61.60976&scale=2&zoom=14&size=1280x1280&maptype=hybrid&markers=color:red%7Csize:tiny%7C10.71847,-61.60976|10.71905,-61.60995|10.71982,-61.61013|10.72022,-61.61018|10.72196,-61.61068|10.72289,-61.61089|10.72351,-61.61112|10.72458,-61.61129|10.72509,-61.61144|10.72585,-61.61191|10.72623,-61.61218|10.7265,-61.61242|10.72713,-61.61288|10.72775,-61.61326|10.72801,-61.61346|10.72817,-61.61365|10.72848,-61.6138|10.72866,-61.61397|10.72932,-61.6144|10.73004,-61.61494|10.73047,-61.61531|10.73051,-61.61553|10.73049,-61.61568|10.73033,-61.61613|10.73016,-61.61649|10.73004,-61.61663|10.72984,-61.617|10.72966,-61.61735|10.72903,-61.61818|10.72867,-61.61878|10.72827,-61.61928|10.72742,-61.62065|10.72724,-61.62105|10.72727,-61.6211|10.72768,-61.62132|10.72777,-61.62141|10.72776,-61.62177|10.72785,-61.62188|10.72829,-61.62197|10.72859,-61.62196|10.72872,-61.62191|10.72913,-61.62206|10.72946,-61.62206|10.72957,-61.6221|10.72965,-61.62216|10.72978,-61.62238|10.73017,-61.62277|10.73055,-61.62296|10.7307,-61.62311|10.73146,-61.62332|10.73188,-61.62326|10.73225,-61.62333|10.73235,-61.62352|10.73246,-61.62361|10.73267,-61.62399|10.73295,-61.62422|10.73285,-61.62439|10.73278,-61.62463|10.7328,-61.62473|10.73291,-61.62479|10.73303,-61.62497|10.73301,-61.62518|10.73289,-61.62534|10.73283,-61.62549|10.7327,-61.62547|10.73263,-61.62558|10.73256,-61.62561|10.73239,-61.62583|10.73235,-61.62599|10.73219,-61.62605|10.73212,-61.62612|10.73213,-61.62617|10.73196,-61.62643|10.73194,-61.62657|10.73191,-61.62689|10.73196,-61.627|10.73193,-61.62718|10.73198,-61.62735|10.73204,-61.62738|10.73207,-61.62791|10.73227,-61.62819|10.73225,-61.62831|10.73206,-61.62869|10.7319,-61.6289|10.73189,-61.62899|10.73195,-61.62907|10.73194,-61.62912|10.73153,-61.62958|10.73149,-61.62959|10.73138,-61.62979|10.73124,-61.62988|10.73117,-61.63001|10.73109,-61.63003|10.73099,-61.63016|10.73096,-61.63025|10.73074,-61.6304|10.73053,-61.63044|10.73029,-61.63043|10.73015,-61.63046|10.73013,-61.63051|10.7297,-61.63048|10.72955,-61.63043|10.72936,-61.63035|10.729,-61.63039|10.72898,-61.63048|10.72872,-61.63073|10.72864,-61.63092|10.72849,-61.63102|10.72825,-61.63105|10.72798,-61.63117|10.72795,-61.63124|10.72805,-61.63128|10.72796,-61.63143|10.72793,-61.63161|10.72781,-61.63176|10.72754,-61.63185|10.7271,-61.6322|10.72701,-61.63223|10.72666,-61.63215|10.72626,-61.63219|10.72591,-61.6323|10.72566,-61.63232|10.72549,-61.63228|10.72536,-61.63242|10.72515,-61.63246|10.725,-61.63259|10.72497,-61.63266|10.72497,-61.63284|10.725,-61.63293|10.72499,-61.63314|10.72475,-61.63343|10.72462,-61.63388|10.72445,-61.63415|10.72439,-61.6342|10.7242,-61.63473|10.72386,-61.63508|10.72366,-61.63515|10.72346,-61.63547|10.72312,-61.63571|10.72305,-61.63571|10.72292,-61.6358|10.7229,-61.63587|10.72286,-61.63587|10.72287,-61.63581|10.7228,-61.63577|10.72279,-61.6357|10.7226,-61.63567|10.72254,-61.63561|10.72247,-61.63549|10.72251,-61.63539|10.72241,-61.63543|10.72229,-61.63544|10.72217,-61.63538|10.72191,-61.63544|10.72192,-61.63551|10.722,-61.63562|10.72201,-61.63558|10.72195,-61.63569|10.72178,-61.63585|10.72163,-61.63589|10.72155,-61.63601|10.72142,-61.63607|10.72142,-61.6361|10.72137,-61.63603|10.72108,-61.63598|10.72099,-61.63607|10.72093,-61.63591|10.72045,-61.63553|10.72037,-61.63541|10.72033,-61.63522|10.72011,-61.63496|10.72005,-61.6349|10.71985,-61.63484|10.7197,-61.6347|10.71948,-61.63443|10.71925,-61.63431|10.71907,-61.63428|10.71862,-61.63402|10.71848,-61.63407|10.71837,-61.63403|10.71779,-61.63411|10.71753,-61.63419|10.71738,-61.63412|10.71724,-61.63412|10.71712,-61.63405|10.71696,-61.63403|10.71674,-61.63378|10.71664,-61.63372|10.7166,-61.63363|10.71641,-61.63347|10.71628,-61.63328|10.71618,-61.63321|10.71607,-61.63305|10.716,-61.63303|10.71592,-61.6329|10.71586,-61.63287|10.71587,-61.63282|10.71579,-61.63267|10.71572,-61.63267|10.71552,-61.63242|10.71518,-61.6321|10.71463,-61.63172|10.7147,-61.63166|10.71468,-61.63161|10.71466,-61.63159|10.71469,-61.63168|10.71458,-61.63171|10.71445,-61.63162|10.71405,-61.63146|10.71396,-61.63132|10.71396,-61.6312|10.71389,-61.63099|10.71393,-61.63085|10.71385,-61.63071|10.71387,-61.63059|10.71385,-61.63057|10.71403,-61.63|10.71413,-61.62979|10.71424,-61.62929|10.71436,-61.62914|10.71463,-61.62904|10.71486,-61.62883|10.71489,-61.62817|10.71476,-61.62789|10.71452,-61.62756|10.71436,-61.6274|10.71419,-61.62704|10.71399,-61.62688|10.7138,-61.62653|10.7135,-61.62607|10.7135,-61.62595|10.71344,-61.62588|10.71329,-61.62553|10.71331,-61.62546|10.71327,-61.62535|10.71331,-61.62528|10.71331,-61.62514|10.71318,-61.62479|10.71317,-61.62463|10.71322,-61.62447|10.7132,-61.62442|10.71326,-61.62423|10.7134,-61.62405|10.71342,-61.62407|10.71362,-61.62408|10.71369,-61.62389|10.71375,-61.62404|10.71392,-61.62386|10.71392,-61.62396|10.71398,-61.62408|10.71404,-61.62414|10.7141,-61.62413|10.71442,-61.6239|10.71446,-61.62383|10.71441,-61.62389|10.71445,-61.62389|10.71454,-61.62375|10.71453,-61.62383|10.71453,-61.62379|10.71458,-61.62381|10.71462,-61.62374|10.71468,-61.62379|10.71474,-61.62372|10.71476,-61.62354|10.7148,-61.62347|10.71491,-61.62341|10.71508,-61.62342|10.71514,-61.62336|10.71517,-61.62338|10.71532,-61.62329|10.71538,-61.62333|10.71545,-61.62311|10.71549,-61.6232|10.7156,-61.62314|10.71583,-61.62312|10.71588,-61.62306|10.716,-61.6231|10.71601,-61.62307|10.71607,-61.62308|10.71612,-61.62304|10.71617,-61.62293|10.71612,-61.62291|10.71628,-61.62285|10.71642,-61.62264|10.71647,-61.62266|10.71665,-61.6226|10.71682,-61.62265|10.71723,-61.62251|10.71771,-61.62244|10.71796,-61.6223|10.71814,-61.6223|10.71837,-61.62217|10.71848,-61.62218|10.71868,-61.6221|10.71883,-61.62196|10.71888,-61.62184|10.71882,-61.6216|10.7186,-61.62149|10.71833,-61.62143|10.7183,-61.62135|10.71817,-61.62125|10.71805,-61.62125|10.71808,-61.6212|10.71797,-61.62108|10.71765,-61.62112|10.71755,-61.62106|10.71755,-61.62111|10.71751,-61.62108|10.71754,-61.62111|10.71742,-61.62087|10.7173,-61.62089|10.71711,-61.62085|10.71697,-61.62074|10.71689,-61.6206|10.71674,-61.62056|10.71672,-61.6204|10.7162,-61.6204|10.71595,-61.62034|10.7157,-61.62053|10.71551,-61.62052|10.7151,-61.62071|10.71488,-61.62064|10.71451,-61.62067|10.71437,-61.62063|10.71416,-61.62073|10.71406,-61.62072|10.71394,-61.6208|10.71396,-61.62079|10.71391,-61.62078|10.71387,-61.62065|10.71368,-61.62056|10.71363,-61.62045|10.71342,-61.62043|10.71338,-61.62048|10.71336,-61.6204|10.71331,-61.62037|10.71324,-61.62005|10.71325,-61.61994|10.71311,-61.61975|10.7131,-61.61963|10.71295,-61.61928|10.71294,-61.61901|10.71288,-61.61881|10.71291,-61.61874|10.71292,-61.61842|10.7129,-61.61828|10.71282,-61.61807|10.71274,-61.61795|10.7128,-61.61781|10.71275,-61.6176|10.71281,-61.61749|10.71285,-61.61721|10.71294,-61.61707|10.71295,-61.6169|10.713,-61.61676|10.71311,-61.61674|10.71327,-61.61642|10.71326,-61.61609|10.71335,-61.61591|10.7134,-61.6159|10.71343,-61.61576|10.71342,-61.61559|10.71358,-61.61523|10.71363,-61.61521|10.71373,-61.6147|10.7137,-61.61457|10.71347,-61.61413|10.7133,-61.61393|10.71331,-61.61372|10.71326,-61.61364|10.71327,-61.61337|10.71323,-61.61307|10.71333,-61.61243|10.71338,-61.61226|10.71334,-61.61193|10.71339,-61.61168|10.71337,-61.61148|10.71328,-61.61124|10.71334,-61.61083|10.71331,-61.61055|10.71325,-61.61044|10.71331,-61.61026|10.71345,-61.61011|10.71354,-61.60982|10.71353,-61.60958|10.7136,-61.6095|10.71397,-61.60922|10.7146,-61.60895|10.71494,-61.60897|10.71529,-61.60905|10.71542,-61.60913|10.71566,-61.60912|10.71614,-61.60921|10.71714,-61.60945|10.71785,-61.60957|10.71842,-61.60976&markers=color:red%7Clabel:C%7C40.718217,-73.998284|40.711614,-74.012318&key=AIzaSyBSlQcsEjU_sR6kajerqEA-a_4gSFKFIB8-->
+      <!-- <img id="fusion-1" src="img/fusion1.png?v=12" /> -->
+      <img id="fusion-result-1" src="img/archion-run-result.png" />
+      <img id="fusion-1" src="img/fusion1.png" />
+      <img id="fusion-2" src="img/fusion2.png" />
+      <img id="fusion-3" src="img/fusion3.png" />
+      <img id="fusion-4" src="img/fusion4.png" />
+      <img id="fusion-5" src="img/fusion5.png" />
+      <img id="fusion-6" src="img/fusion6.png" />
+      <img id="sky" src="img/51565083506_d38c974520_o.jpg?v=1634182593459">
+      <img id="trinidad"
+        src="https://atlas.microsoft.com/map/static/png?api-version=1.0&subscription-key=y9HC2pC_jKnx3jlbrE6FYKRM0MfH4ZdRMOkFWwOSsis&center=-61.311951%2C10.536421&zoom=8&height=4096&width=4096" />
+      <a-asset-item id="json-places" src="sample-place.geojson" />
+
+    </a-assets>
+
+    <a-sky src="#sky"></a-sky>
+
+    <a-entity template="src: menu.template.html"></a-entity>
     
-    <script type="text/javascript" src="activities.js"></script>
-    <script type="text/javascript" src="state.js"></script>
-  </head>
+    <a-entity template="src: run-results.template.html"></a-entity>
+  
 
-  <body style="margin : 0px; overflow: hidden;">
-    <form id="loginForm" action="/signin" method="post">
-      <input type="hidden" name="Provider" value="Strava" />
-      <input type="hidden" name="ReturnUrl" />
-    </form>
 
-    <!-- <a-scene embedded arjs='sourceType: webcam;'> 
-    <a-scene
-      embedded
-      cursor="rayOrigin: mouse; "
-      raycaster="objects: .clickable"
-      arjs="sourceType:  image; sourceUrl:img/IMG_6414.jpg"
-    >-->
-    <a-scene 
-             cursor="rayOrigin: mouse;"
-             raycaster="objects: .clickable"
-             >
-      <a-assets>
-        <img id="fusion-banner" src="img/IMG_6414.jpg" />
-        <img id="fusion-1" src="img/fusion1.png" />
-        <img id="fusion-2" src="img/fusion2.png" />
-        <img id="fusion-3" src="img/fusion3.png" />
-        <img id="fusion-4" src="img/fusion4.png" />
-        <img id="fusion-5" src="img/fusion5.png" />
-        <img id="fusion-6" src="img/fusion6.png" />
-        <img id="sky" src="https://cdn.glitch.me/4f2f309b-b164-4484-b25a-5e003c7655ee%2F51565083506_d38c974520_o.jpg?v=1634182593459">
-        <a-asset-item id="json-places" src="sample-place.geojson" />
-
-      </a-assets>
-      
-      <!-- https://www.flickr.com/photos/nb-fotos/51565083506/in/pool-equirectangular/ -->
-      <a-sky src="#sky"></a-sky>
-
-   <a-entity position="0 0 0.001"
-            geometry="primitive: plane; width: 8; height: 4;"
-            material="shader: flat; color: #000; transparent: true;"
-            geojson="src: #json-places;"
-            >
-          </a-entity>
-
-      <a-entity template="src: menu.template.html"></a-entity>
-
-      <a-entity template="src: activity-details.template.html"></a-entity>
-     
     <a-light></a-light>
 
-      
-      <a-entity
-        id="signin-button"
-        class="clickable"
-        cursor="fuse: true;"
-        laser-controls
-        raycaster="lineColor: red; lineOpacity: 0.5"
-        geometry="primitive: box"
-        material="color: red"
-        position="2 4 -7"
-      ></a-entity>
-      <a-entity
-        id="trophy-container"
-        width="1"
-        height="1"
-        scale="0.5 0.5 0.5"
-        position="0 0 -9"
-      >
-        <a-entity id="rotator" 
-                  animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
-                  position="0 4 -8">
-          <a-entity
-            id="cube"
-            position="0 0 0"
-            rotation="30 30 30"
-            width="4"
-            height="4"
-            depth="4"
-            scale=""
-          >
-            <a-box
-              id="back"
-              position=""
-              rotation=""
-              width="4"
-              height="4"
-              depth="0"
-              color="#7BC8A4"
-              material="src: #fusion-1"
-              geometry=""
-            ></a-box>
-            <a-box
-              id="left"
-              position="-2 0 2"
-              rotation="0 90 0"
-              color="#1AA3D9"
-              height="4"
-              width="4"
-              depth="0"
-              material="src: #fusion-2"
-            ></a-box>
-            <a-box
-              id="rght"
-              position="2 0 2"
-              rotation="0 90 0"
-              width="4"
-              height="4"
-              color="#7BC8A4"
-              depth="0"
-              material="src: #fusion-3"
-              geometry=""
-            ></a-box>
-            <a-box
-              id="topp"
-              position="0 2 2"
-              rotation="90 0 0"
-              width="4"
-              height="4"
-              color="#7BC8A4"
-              depth="0"
-              material="src: #fusion-4"
-              geometry=""
-            ></a-box>
-            <a-box
-              id="bott"
-              position="0 -2 2"
-              rotation="90 0 0"
-              width="4"
-              height="4"
-              color="#7BC8A4"
-              depth="0"
-              material="src: #fusion-5"
-              geometry=""
-            ></a-box>
-            <a-box
-              id="frnt"
-              position="0 0 4"
-              rotation=""
-              width="4"
-              height="4"
-              color="#7BC8A4"
-              material="src: #fusion-6"
-              depth="0"
-              geometry=""
-            ></a-box>
-          </a-entity>
+
+
+    <a-image position="7 0 -6" height="12" width="12" src="#fusion-banner2"
+      animation="property:opacity;dur=1000;direction=forward;from=1;to=0;begin=fadeout"
+      animation__2="property:opacity;dur=1000;direction=forward;from=0;to=1;begin=fadein"
+      faders="starter:#fusion-banner;ender:#fusion-banner2">
+    </a-image>
+    <a-entity id="trophy-container" width="1" height="1" scale="0.5 0.5 0.5" position="-4 4 -6">
+      <a-entity id="rotator" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" position="0 4 0">
+        <a-entity id="cube" position="0 0 0" rotation="30 30 30" width="4" height="4" depth="4" scale="">
+          <a-image id="back" width="4" height="4" color="#7BC8A4" src="#fusion-1"></a-image>
+          <a-image id="left" position="-2 0 2" rotation="0 90 0" color="#1AA3D9" height="4" width="4" src="#fusion-2">
+          </a-image>
+          <a-image id="rght" position="2 0 2" rotation="0 90 0" width="4" height="4" color="#7BC8A4" src="#fusion-3">
+          </a-image>
+          <a-image id="topp" position="0 2 2" rotation="90 0 0" width="4" height="4" color="#7BC8A4" src="#fusion-4">
+          </a-image>
+          <a-image id="bott" position="0 -2 2" rotation="90 0 0" width="4" height="4" color="#7BC8A4" src="#fusion-5"
+            geometry=""></a-image>
+          <a-image id="frnt" position="0 0 4" rotation="" width="4" height="4" color="#7BC8A4" src="#fusion-6">
+          </a-image>
         </a-entity>
-
-        <a-box
-          position="0.5 -3.5 -6"
-          rotation=""
-          color="#1CC3D9"
-          height="4"
-          width="4"
-          depth="4"
-          material="src: #fusion-banner"
-          geometry=""
-        >
-        </a-box>
       </a-entity>
-    
-    
-      <a-entity position="0 .6 4">
-        <a-camera look-controls>
-          <a-entity
-            id="mycursor"
-            cursor="fuse: true; fuseTimeout: 500; max-distance: 30;"
-            position="0 0 -5"
-            geometry="primitive: sphere;"
-            material="color: blue; shader: flat"
-            scale="0.070 0.070 0.070"
-          >
-          </a-entity>
-        </a-camera>
-        <a-entity laser-controls="hand: right"></a-entity>
 
-      </a-entity>
-      
-    </a-scene>
+
+    </a-entity>
+
+
+
     
-    
-    <script src="js/main.js"></script>
-  </body>
+    <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: [gui-interactable]"></a-entity>
+    <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: [gui-interactable]"></a-entity>
+    <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: [gui-interactable]"></a-entity>
+
+    <a-entity id="cameraRig" position="0 .6 4">
+      <a-camera look-controls wasd-controls>
+        <a-entity id="mycursor" cursor="rayOrigin: 'mouse';fuse: true; fuseTimeout: 500; max-distance: 30;"
+          position="0 0 -5" geometry="primitive: sphere;" material="color: blue; shader: flat"
+          scale="0.070 0.070 0.070">
+        </a-entity>
+      </a-camera>
+      <a-entity laser-controls="hand: right"></a-entity>
+
+    </a-entity>
+
+  </a-scene>
+  <script src="js/voice-commander.js"></script>
+
+</body>
+
 </html>

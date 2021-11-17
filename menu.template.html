@@ -26,15 +26,16 @@
 <a-entity bind-for="for: item; in: fusionActivities; key: name; updateInPlace: true">
   <template>
     <a-gui-button
-    id="btn1"
+    id="{{uploadId}}"
     width="2.5"
     height="0.7"
     base-depth="0.05"
     depth="0.2"
     gap="0.1"
     radius="0"
-    onclick="testButtonAction1"
+    onclick="showMarkers"
     value="{{item.displayName}}"
+    display-index="{{item.displayindex}}"
     font-size="0.3"
     margin="0 0 0.05 0"
     toggle="true"
@@ -48,7 +49,7 @@
     geometry="primitive: plane; height: 0.7; width: 2.5"
     material="shader: flat; transparent: true; opacity: 0.5; side: double; color: #011C40"
     role="button"
-    tabindex="0"
+    tabindex="{{item.displayindex}}"
     aria-label="{{item.displayName}}"
     position="0 {{item.index}} 0.01"
   >
