@@ -16,20 +16,26 @@ function showMarkers(e)
   return;
     //console.log(e);
     var target = e.target;
-    var aria = target.getAttribute("aria-label")
+    var aria = target.getAttribute("aria-label");
+
     var xPos = 41+activityDisplay[aria];
+    var elementName = "#fusion-plane-"+activityDisplay[aria];
+    var element = document.querySelector(elementName);
+    var elementPosition = element.attributes["position"].value;
+    var elementPos = elementPosition.split(" ");
+
     var cameraPosition = cameraRig.attributes["position"].value;
     var pos = cameraPosition.split(" ");
-    cameraRig.setAttribute("position", `${xPos} ${pos[1]} ${pos[2]}`);
-
-    var menuPosition = menu.attributes["position"].value;
-    var menuPos = menuPosition.split(" ");
-    menu.setAttribute("position", `${xPos-8} ${menuPos[1]} ${menuPos[2]}`);
+    //cameraRig.setAttribute("position", `${elementPos[1]} ${pos[1]} ${pos[2]}`);
+    cameraRig.setAttribute("position", elementPos[0]+" "+elementPos[1]+" "+elementPos[2]);
+    //var menuPosition = menu.attributes["position"].value;
+    //var menuPos = menuPosition.split(" ");
+    //menu.setAttribute("position", `${xPos-8} ${menuPos[1]} ${menuPos[2]}`);
     if (aria !== null)
     {
       var loweredAria = aria.toLowerCase();
       var summary = findDescription(loweredAria.substring(0, loweredAria.indexOf(" ")));
-      read(summary);
+      //read(summary);
     }
     
 }
@@ -39,6 +45,7 @@ function read(summary)
 {
   if (lastRead === null)
   {
+    console.log("ABOUT TO READ: "+summary);
     var speech = new SpeechSynthesisUtterance(summary);
     window.speechSynthesis.speak(speech);
     lastRead = summary;
