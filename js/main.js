@@ -13,6 +13,7 @@
 
 function showMarkers(e)
 {
+  return;
     //console.log(e);
     var target = e.target;
     var aria = target.getAttribute("aria-label")

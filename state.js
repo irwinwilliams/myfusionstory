@@ -5,6 +5,7 @@ AFRAME.registerState({
   initialState: {
     score: 0,
     fusionActivities: activities,
+    descriptions: descriptions,
     menuHeight:8
   },
 

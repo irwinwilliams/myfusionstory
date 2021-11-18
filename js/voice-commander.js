@@ -15,6 +15,7 @@ var recognition;
 //recognition.start();
 
 document.body.onclick = function () {
+  return;
   if (recognition === undefined) {
     recognition = new SpeechRecognition();
     var speechRecognitionList = new SpeechGrammarList();
@@ -58,7 +59,7 @@ document.body.onclick = function () {
       console.log("Error occurred in recognition: " + event.error);
     };
 
-    recognition.start();
+    //recognition.start();
 
     console.log("Ready to receive a color command.");
   }

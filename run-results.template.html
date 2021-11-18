@@ -1,4 +1,4 @@
-<a-entity position="41 0 -6">
+<a-entity position="6 2 -18">
     <a-entity bind-for="for: item; in: fusionActivities; key: name; updateInPlace: true">
         <template>
             <!-- <a-text 
@@ -14,15 +14,24 @@
 
             -->
             <a-image id="fusion-plane-{{displayindex}}" 
-                geometry="primitive: plane; width: 11; height: 11"
+                geometry="primitive: plane; width: 12; height: 12"
                 src="{{google_image_location}}"
                 material="transparent: true; opacity: 1" 
-                position="{{displayindex}} 0 0"
-                rotation="0 0 0"
-                text="align:center; opacity:1; lineHeight: 50; width:15; wrap-count:15;baseline: bottom; font: kelsonsans; color: white; value:{{displayName2}}"
+                position="{{position}}"
+                rotation="{{rotation}}"
+                text="value:{{displayName2}};align:center; opacity:1; lineHeight: 50; width:15; wrap-count:15;baseline: top; font: kelsonsans; color: white; "
                 look-at="#cameraRig">
             </a-image>
-
+            <a-text id="fusion-plane-{{displayindex}}-text"
+            position="{{position}}"
+            rotation="{{rotation}}"
+            value="{{fusionSummary}}"
+            wrapCount= "20"
+            color="000"
+            align="center"
+            >
+            </a-text>
+            
         </template>
     </a-entity>
 </a-entity>

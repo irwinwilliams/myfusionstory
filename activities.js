@@ -349,23 +349,35 @@ for (var i=0;i<activities.length;i++)
     if (activities[i].displayName.toLowerCase().indexOf("archion") > -1)
       {
         activities[i].displayName = "Archion (6)";
+        activities[i].displayName2 = "Archion";
+        activities[i].position="0 0 12";
+        activities[i].rotation="0 180 0";
         activities[i].fusionSummary = findDescription("archion");
       }
     else if (activities[i].displayName.toLowerCase().indexOf("paragrant") > -1)
       {
         activities[i].displayName = "Paragrant (3)";
+        activities[i].displayName2 = "Paragrant";
+        activities[i].rotation = "0 -90 0";
+        activities[i].position = "6 0 6";
         activities[i].fusionSummary = findDescription("paragrant");
 
       }
         else if (activities[i].displayName.toLowerCase().indexOf("breezy") > -1)
       {
         activities[i].displayName = "Breezy (2)";
+        activities[i].displayName2 = "Breezy";
+        activities[i].rotation = "0 90 0";
+        activities[i].position = "-6 0 6";
         activities[i].fusionSummary = findDescription("breezy");
 
       }
         else if (activities[i].displayName.toLowerCase().indexOf("alpha") > -1)
       {
         activities[i].displayName = "Alpha (1)";
+        activities[i].displayName2 = "Alpha";
+        activities[i].rotation = "0 0 0";
+        activities[i].position = "0 0 0";
         activities[i].fusionSummary = findDescription("alpha");
 
       }
@@ -373,11 +385,18 @@ for (var i=0;i<activities.length;i++)
       {
         activities[i].fusionSummary = findDescription("chanolo");
         activities[i].displayName = "Chanolo (4)";
+        activities[i].displayName2 = "Chanolo";
+        activities[i].rotation = "90 0 0";
+        activities[i].position = "0 6 6";
       }
         else if (activities[i].displayName.toLowerCase().indexOf("covigne") > -1)
       {
         activities[i].fusionSummary = findDescription("covigne");
         activities[i].displayName = "Covigne (5)";
+        activities[i].position="0 -6 6";
+        activities[i].rotation="-90 0 0";
+
+        activities[i].displayName2 = "Covigne";
       }
 
    activityDisplay[activities[i].displayName] = activities[i].displayindex;
